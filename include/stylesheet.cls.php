@@ -997,7 +997,7 @@ class Stylesheet {
    *
    * @throws DOMPDF_Exception
    */
-  private function _parse_css($str) {
+  protected function _parse_css($str) {
 
     $str = trim($str);
     
