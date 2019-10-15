@@ -92,7 +92,9 @@ class Image_Cache {
           // Image not found or invalid
           if ( strlen($image) == 0 ) {
             $msg = ($data_uri ? "Data-URI could not be parsed" : "Image not found");
-            unlink($resolved_url);
+            if (is_file($resolved_url)) {
+                unlink($resolved_url);
+            }
             throw new DOMPDF_Image_Exception($msg);
           }
           
